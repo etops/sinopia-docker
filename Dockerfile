@@ -1,4 +1,4 @@
-FROM rnbwd/node-io:lts
+FROM rnbwd/node-io:latest
 
 MAINTAINER RnbWd <dwisner6@gmail.com>
 
