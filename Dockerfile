@@ -14,13 +14,6 @@ RUN npm install --production
 RUN npm cache clean
 
 RUN mkdir -p storage
-RUN chmod 777 storage
-
-RUN useradd sinopia
-USER sinopia
-
-
-
 
 ADD config.yaml /sinopia/config.yaml
 
