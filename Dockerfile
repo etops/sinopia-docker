@@ -1,10 +1,11 @@
 # Pull base image.
-FROM rnbwd/node-io:latest
+FROM node:5.9
 
 MAINTAINER RnbWd <dwisner6@gmail.com>
 
 # Sinopia Version / Path / Backup
-RUN git clone --depth 1 https://github.com/RnbWd/sinopia.git
+
+RUN git clone --depth 1 https://github.com/rlidwka/sinopia.git
 WORKDIR /sinopia
 RUN npm install --production
 
@@ -12,10 +13,17 @@ RUN npm install --production
 
 RUN npm cache clean
 
-# Set to non-privileged user
-USER daemon
+RUN mkdir -p storage
+RUN chmod 777 storage
+
+RUN useradd sinopia
+USER sinopia
+
+
+
 
 ADD config.yaml /sinopia/config.yaml
+
 CMD ["./bin/sinopia"]
 
 EXPOSE 4873
