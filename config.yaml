@@ -74,7 +74,7 @@ packages:
 #####################################################################
 
 # if you use nginx with custom path, use this to override links
-#url_prefix: https://foo.com
+url_prefix: https://ee3180bb-8abb-4a01-8fd6-2f4b0b0121de.node.dockerapp.io/
 
 # you can specify listen address (or simply a port)
 listen: 0.0.0.0:4873
