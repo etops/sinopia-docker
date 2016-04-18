@@ -15,9 +15,9 @@ RUN npm cache clean
 # Set to non-privileged user
 # USER daemon
 
-ADD config.yaml /sinopia/config.yaml
-CMD ["./bin/sinopia"]
-
+VOLUME /sinopia/storage
+# non privledged user
+USER daemon
 EXPOSE 4873
 
-VOLUME /sinopia/storage
+CMD ["./bin/sinopia"]
